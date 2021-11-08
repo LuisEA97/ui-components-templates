@@ -1,6 +1,6 @@
 # UI components with HeadlessUI and TailwindCSS
 
-This project was created with [Create React App](https://github.com/facebook/create-react-app). TailwindCSS and HeadlessUI.
+This project was created with [Create React App](https://github.com/facebook/create-react-app), [TailwindCSS](https://tailwindcss.com/docs/guides/create-react-app) and [HeadlessUI](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-react).
 
 ## Available Scripts
 
