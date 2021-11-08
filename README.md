@@ -2,7 +2,10 @@
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app), [TailwindCSS](https://tailwindcss.com/docs/guides/create-react-app) and [HeadlessUI](https://github.com/tailwindlabs/headlessui/tree/main/packages/%40headlessui-react).
 
-## Available Scripts
+## First steps
+This project was created using npx create-react-app "[name]"
+
+## Setting up TailwindCSS
 
 In the project directory, you can run:
 
