@@ -120,3 +120,18 @@ module.exports = {
 
 **I highly recommend install `Tailwind CSS IntelliSense` extension in Visual Studio Code, in order to get suggestions of tailwind styles when you are coding**
 
+## Setting up HeadlessUI
+
+Installation is pretty simple, just run: 
+
+>If you are in NPM:
+```
+npm install @headlessui/react
+```
+
+>Or if you are in Yarn:
+```
+yarn add @headlessui/react
+```
+
+**For documentation, go to [Headless UI Official Documentation](https://headlessui.dev/) in order to start using it**
