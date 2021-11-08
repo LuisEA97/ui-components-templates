@@ -118,7 +118,7 @@ module.exports = {
 
 ### TailwindCSS extension for Visual Studio Code
 
-**I highly recommend install `Tailwind CSS IntelliSense` extension in Visual Studio Code, in order to get suggestions of tailwind styles when you are coding**
+**I highly recommend to install `Tailwind CSS IntelliSense` extension in Visual Studio Code, in order to get suggestions of tailwind styles when you are coding**
 
 ## Setting up HeadlessUI
 
