@@ -28,6 +28,24 @@ Run:
 npm install @craco/craco
 ```
 
+### Overriding React Scripts by Craco Scrips:
+Once it’s installed, update your scripts in your package.json file to use craco instead of react-scripts for all scripts except eject:
+
+#### Replace the following lines in `package.json`
+```js
+{
+    /*package.json*/
+    // ...
+    "scripts": {
+     "start": "craco start",
+     "build": "craco build",
+     "test": "craco test",
+      "eject": "react-scripts eject"
+    },
+  }
+```
+
+
 
 ### `npm test`
 
