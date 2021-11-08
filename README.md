@@ -5,17 +5,29 @@ This project was created with [Create React App](https://github.com/facebook/cre
 ## First steps
 This project was created using npx create-react-app "[name]"
 
-## Setting up TailwindCSS
+## Setting up TailwindCSS in React Project
 
-In the project directory, you can run:
+>Note: 
+>  You can find these installation stepes at [TailwindCSS Documentation here](https://tailwindcss.com/docs/guides/create-react-app)
 
-### `npm start`
+### Installing TailwindCSS via NPM:
+Install Tailwind and its peer-dependencies using npm:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> You need to install PostCSS in order to allow TailwindCSS to convert js files into CSS:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Run
+```
+npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+```
+
+#### Installing and configuring CRACO
+We need to install another package: CRACO to be able to configuring TailwindCSS in our project:
+
+Run:
+```
+npm install @craco/craco
+```
+
 
 ### `npm test`
 
