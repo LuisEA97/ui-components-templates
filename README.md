@@ -8,7 +8,7 @@ This project was created using npx create-react-app "[name]"
 ## Setting up TailwindCSS in React Project
 
 >Note: 
->  You can find these installation stepes at [TailwindCSS Documentation here](https://tailwindcss.com/docs/guides/create-react-app)
+>  You can find these installation steps at [TailwindCSS Documentation here](https://tailwindcss.com/docs/guides/create-react-app)
 
 ### Installing TailwindCSS via NPM:
 Install Tailwind and its peer-dependencies using npm:
@@ -45,14 +45,63 @@ Once it’s installed, update your scripts in your package.json file to use crac
   }
 ```
 
+### Create `craco.config.js`
 
+Next, create a `craco.config.js` at the root of our project and add the `tailwindcss` and `autoprefixer` as PostCSS plugins:
 
-### `npm test`
+#### `./craco.config.js`
+```js
+// ./craco.config.js
+module.exports = {
+  style: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
+}
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Initializing TailwindCSS
+Finally, run this command in order to generate generate a `tailwind.config.js` file in our project:
 
-### `npm run build`
+```
+npx tailwindcss-cli@latest init
+```
+
+Once it has done, you can see at the root of your project an additional file called `tailwind.config.js` with the following:
+
+```js
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+#### Replace this line:
+```js
+module.exports = {
+  purge: [],
+  ...
+}
+```
+
+#### By:
+
+```js
+module.exports = {
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  ...
+}
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
