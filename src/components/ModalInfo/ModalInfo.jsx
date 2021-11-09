@@ -1,7 +1,7 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 
-export default function MyModal() {
+export default function ModalInfo({ options, buttonTheme }) {
     let [isOpen, setIsOpen] = useState(false)
 
     function closeModal() {
@@ -11,6 +11,33 @@ export default function MyModal() {
     function openModal() {
         setIsOpen(true)
     }
+    const [hover, setHover] = useState(false)
+    const toggleHover = () => {
+        setHover(!hover)
+    }
+
+    const addLight = function (color, amount) {
+        let cc = parseInt(color, 16) + amount;
+        let c = (cc > 255) ? 255 : (cc);
+        c = (c.toString(16).length > 1) ? c.toString(16) : `0${c.toString(16)}`;
+        return c;
+    }
+    const subtractLight = function (color, amount) {
+        let cc = parseInt(color, 16) - amount;
+        let c = (cc < 0) ? 0 : (cc);
+        c = (c.toString(16).length > 1) ? c.toString(16) : `0${c.toString(16)}`;
+        return c;
+    }
+    const lighten = (color, amount) => {
+        color = (color.indexOf("#") >= 0) ? color.substring(1, color.length) : color;
+        amount = parseInt((255 * amount) / 100);
+        return color = `#${addLight(color.substring(0, 2), amount)}${addLight(color.substring(2, 4), amount)}${addLight(color.substring(4, 6), amount)}`;
+    }
+    const darken = (color, amount) => {
+        color = (color.indexOf("#") >= 0) ? color.substring(1, color.length) : color;
+        amount = parseInt((255 * amount) / 100);
+        return color = `#${subtractLight(color.substring(0, 2), amount)}${subtractLight(color.substring(2, 4), amount)}${subtractLight(color.substring(4, 6), amount)}`;
+    }
 
     return (
         <Fragment>
@@ -18,9 +45,12 @@ export default function MyModal() {
                 <button
                     type="button"
                     onClick={openModal}
-                    className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-opacity-20 hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
+                    onMouseEnter={toggleHover}
+                    onMouseLeave={toggleHover}
+                    style={hover ? { backgroundColor: darken(buttonTheme, 15) } : { backgroundColor: darken(buttonTheme, 0) }}
+                    className="px-4 py-2 text-sm font-medium text-white rounded-md hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 transition-all ease-in-out duration-200"
                 >
-                    Open dialog
+                    {options.buttonText}
                 </button>
             </div>
 
@@ -40,7 +70,7 @@ export default function MyModal() {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                         >
-                            <Dialog.Overlay className="fixed inset-0" />
+                            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-50 " />
                         </Transition.Child>
 
                         {/* This element is to trick the browser into centering the modal contents. */}
@@ -64,15 +94,11 @@ export default function MyModal() {
                                     as="h3"
                                     className="text-lg font-medium leading-6 text-gray-900"
                                 >
-                                    Payment successful
+                                    {options.title}
                                 </Dialog.Title>
                                 <div className="mt-2">
                                     <p className="text-sm text-gray-500">
-                                        Your payment has been successfully submitted. We’ve sent you
-                                        an email with all of the details of your order.
-                                    </p>
-                                    <p className="text-sm text-gray-500">
-                                        Another content
+                                        {options.text}
                                     </p>
                                 </div>
 
@@ -82,7 +108,7 @@ export default function MyModal() {
                                         className="inline-flex justify-center px-4 py-2 text-sm font-medium text-blue-900 bg-blue-100 border border-transparent rounded-md hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
                                         onClick={closeModal}
                                     >
-                                        Got it, thanks!
+                                        {options.closingText}
                                     </button>
                                 </div>
                             </div>
