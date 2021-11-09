@@ -113,7 +113,7 @@ module.exports = {
 @tailwind utilities;
 ```
 
-> 🎉 Congratulations! You have successfully installed an initialized TailwindCSS in your project. Happy coding! :)
+> 🎉 Congratulations! You have successfully installed an initialized TailwindCSS in your project. Happy coding!
 
 
 ### TailwindCSS extension for Visual Studio Code

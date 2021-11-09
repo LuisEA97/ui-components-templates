@@ -24,7 +24,7 @@ const Dropdown = ({ head, options }) => {
                     leaveTo="transform opacity-0 scale-95"
                 >
                     <Menu.Items
-                        className="inline-flex flex-col shadow-md absolute top-10 left-0 bg-white focus:outline-none rounded-md p-1 w-56"
+                        className="inline-flex flex-col shadow-md absolute top-10 left-0 z-50 bg-white focus:outline-none rounded-md p-1 w-56"
                     >
                         {
                             options.map((group, i) => {
