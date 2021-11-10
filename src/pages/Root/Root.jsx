@@ -152,26 +152,26 @@ const Root = () => {
                     <Button
                         type='danger'
                         text='Danger!'
-                        icon={<i class="fas fa-check-circle self-center mr-2"></i>}
+                        icon={<i className="fas fa-check-circle self-center mr-2"></i>}
                         action={testBtnAction}
                     />
                     <Button
                         type='success'
                         text='Success!'
-                        icon={<i class="fas fa-check-circle self-center mr-2"></i>}
+                        icon={<i className="fas fa-check-circle self-center mr-2"></i>}
                         action={testBtnAction}
                     />
                     <Button
                         type='warning'
                         text='Warning!'
-                        icon={<i class="fas fa-check-circle self-center mr-2"></i>}
+                        icon={<i className="fas fa-check-circle self-center mr-2"></i>}
                         action={testBtnAction}
                     />
                     <Button
                         theme="#DB2777"
                         customTextColor="#FFFFF"
                         text='Custom button'
-                        icon={<i class="fas fa-check-circle self-center mr-2"></i>}
+                        icon={<i className="fas fa-check-circle self-center mr-2"></i>}
                         action={testBtnAction}
                     />
                 </div>

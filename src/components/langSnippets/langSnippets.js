@@ -25,7 +25,23 @@ const Example = () => {
     const handlePlanValue = (plan) => {
         setCurrentPlan(plan)
     }
-    
+    const plans = [
+        {
+            name: 'Save',
+            descr1: 'The cheapiest',
+            descr2: 'Starting at $59.99'
+        },
+        {
+            name: 'Regular',
+            descr1: 'Everyone loves it',
+            descr2: 'Starting at $99.99'
+        },
+        {
+            name: 'Premium',
+            descr1: 'Recommended by us!',
+            descr2: '$129.99'
+        },
+    ]
     return (
         <div>
             <div className="my-classes-here">

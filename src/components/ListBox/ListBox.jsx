@@ -1,7 +1,7 @@
 import { Fragment, useState, useEffect } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
-import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
-
+import { HiOutlineSelector } from "react-icons/hi";
+import { FiCheck } from "react-icons/fi";
 
 export default function ListBox({ options, callBack, text, theme }) {
     const [selected, setSelected] = useState('')
@@ -16,8 +16,8 @@ export default function ListBox({ options, callBack, text, theme }) {
                     <Listbox.Button className="cursor-pointer font-semibold w-full py-2 pl-3 pr-10 text-left bg-white rounded-lg shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-white focus-visible:ring-offset-orange-300 focus-visible:ring-offset-2 focus-visible:border-indigo-500 sm:text-sm">
                         <span className="block truncate">{selected ? selected : text}</span>
                         <span className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                            <SelectorIcon
-                                className="w-5 h-5 text-gray-400"
+                            <HiOutlineSelector
+                                className="self-center text-xl text-gray-400"
                                 aria-hidden="true"
                             />
                         </span>
@@ -53,7 +53,7 @@ export default function ListBox({ options, callBack, text, theme }) {
                                                         }
                                                         absolute inset-y-0 left-0 flex items-center pl-3`}
                                                 >
-                                                    <CheckIcon className="w-5 h-5" aria-hidden="true" />
+                                                    <FiCheck className="text-lg" aria-hidden="true" />
                                                 </span>
                                             ) : null}
                                         </div>

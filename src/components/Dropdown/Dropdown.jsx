@@ -36,7 +36,9 @@ const Dropdown = ({ head, options, theme }) => {
                 <Menu.Button as="button" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={hover ? { backgroundColor: darken(theme, 15) } : { backgroundColor: darken(theme, 0) }} className="inline-flex justify-center px-4 py-2 rounded-lg font-semibold  text-gray-50 text-sm focus:outline-none hover:bg-yellow-500 hover:shadow-md transition-all ease-in-out duration-150" >
                     {head}
                     <FaChevronDown
-                        className="self-center ml-2 "
+
+                        className={({ active }) => `self-center ml-2 ${active ? 'transform rotate-180' : ''
+                            }`}
                     />
                 </Menu.Button>
 
