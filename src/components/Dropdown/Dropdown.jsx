@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Menu, Transition } from "@headlessui/react"
-import { ChevronDownIcon } from '@heroicons/react/solid'
+import { FaChevronDown } from "react-icons/fa";
 
 
 const Dropdown = ({ head, options, theme }) => {
@@ -35,8 +35,8 @@ const Dropdown = ({ head, options, theme }) => {
             <Menu as="div" className="w-56 relative">
                 <Menu.Button as="button" onMouseEnter={toggleHover} onMouseLeave={toggleHover} style={hover ? { backgroundColor: darken(theme, 15) } : { backgroundColor: darken(theme, 0) }} className="inline-flex justify-center px-4 py-2 rounded-lg font-semibold  text-gray-50 text-sm focus:outline-none hover:bg-yellow-500 hover:shadow-md transition-all ease-in-out duration-150" >
                     {head}
-                    <ChevronDownIcon
-                        className="w-5 h-5 ml-2 -mr-1 "
+                    <FaChevronDown
+                        className="self-center ml-2 "
                     />
                 </Menu.Button>
 

@@ -10,27 +10,25 @@ export default function VerticalRadio({ menu, theme, callBack }) {
     }, [selected])
 
     return (
-        <div className="w-full p-4">
+        <div style={{ width: '28rem' }} className="p-4">
             <div className="w-full max-w-md mx-auto">
                 <RadioGroup value={selected} onChange={setSelected}>
                     <RadioGroup.Label className="sr-only">Server size</RadioGroup.Label>
-                    <div className="space-y-2">
+                    <div className="space-y-2 ">
                         {menu.map((plan) => (
                             <RadioGroup.Option
                                 key={plan.name}
                                 as="fragment"
                                 value={plan}
-
                             >
                                 {({ active, checked }) => (
                                     <div
-                                        style={checked ? { backgroundColor: theme, color: 'white' } : { backgroundColor: 'rgba(255, 255, 255, 1)' }}
+                                        style={selected.name === plan.name ? { backgroundColor: theme, color: 'white' } : { backgroundColor: 'rgba(255, 255, 255, 1)' }}
                                         className={
                                             `${active
                                                 ? 'ring-2 ring-offset-2 ring-offset-blue-50 ring-white ring-opacity-10'
                                                 : ''
                                             }
-                      
                                             relative rounded-lg shadow-md px-5 py-4 text-left cursor-pointer flex focus:outline-none my-3 `
                                         }>
                                         <>
@@ -39,14 +37,14 @@ export default function VerticalRadio({ menu, theme, callBack }) {
                                                     <div className="text-sm">
                                                         <RadioGroup.Label
                                                             as="p"
-                                                            className={`font-medium  ${checked ? 'text-white' : 'text-gray-900'
+                                                            className={`font-medium  ${selected.name === plan.name ? 'text-white' : 'text-gray-900'
                                                                 }`}
                                                         >
                                                             {plan.name}
                                                         </RadioGroup.Label>
                                                         <RadioGroup.Description
                                                             as="span"
-                                                            className={`inline ${checked ? 'text-sky-100' : 'text-gray-500'
+                                                            className={`inline ${selected.name === plan.name ? 'text-sky-100' : 'text-gray-500'
                                                                 }`}
                                                         >
                                                             <span>
@@ -57,7 +55,7 @@ export default function VerticalRadio({ menu, theme, callBack }) {
                                                         </RadioGroup.Description>
                                                     </div>
                                                 </div>
-                                                {checked && (
+                                                {selected.name === plan.name && (
                                                     <div className="flex-shrink-0 text-white">
                                                         <FaCheckCircle className="w-5 h-5" />
                                                     </div>

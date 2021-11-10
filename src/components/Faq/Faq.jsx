@@ -16,8 +16,8 @@ export default function Faq({ faqs, buttonColor, buttonTextColor }) {
                                     <>
                                         <Disclosure.Button
                                             style={{ color: buttonTextColor, backgroundColor: buttonColor }}
-                                            className="flex justify-between w-full px-4 py-3 text-sm font-medium text-left  rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-all ease-in-out duration-200 filter hover:brightness-90">
-                                            <span>{faq.title}</span>
+                                            className=" flex justify-between w-full px-4 py-3 text-sm font-medium text-left rounded-lg focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 transition-all ease-in-out duration-200 filter hover:brightness-90">
+                                            <span className="w-full">{faq.title}</span>
                                             <ChevronUpIcon
                                                 style={{ color: buttonTextColor }}
                                                 className={`transition-all ease-in-out duration-200 ${open ? 'transform rotate-180' : ''
